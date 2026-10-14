@@ -1,3 +1,5 @@
+![Schema Identity for EmDash](https://raw.githubusercontent.com/monprez/emdash-schema-identity/main/assets/banner.png)
+
 # Schema Identity for EmDash
 
 Structured data for [EmDash](https://emdashcms.com) sites, with the most care
@@ -8,7 +10,7 @@ Schema Identity replaces EmDash's built-in JSON-LD with one connected
 schema.org graph on every page. EmDash itself keeps handling meta tags, Open
 Graph, canonical URLs, the sitemap and robots.txt.
 
-By [Monprez](https://monprez.se). Also available for WordPress as
+By [Monprez](https://monprez.se/en/home/). Also available for WordPress as
 [Monprez Schema Identity](https://wordpress.org/plugins/monprez-schema-identity/).
 
 ## What it publishes
