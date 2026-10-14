@@ -1,0 +1,27 @@
+{
+	"today": "2026-09-30",
+	"rows": [
+		{ "name": "Active, open-ended", "issuer": "Body A", "date_issued": "2019-06-01", "cert_url": "https://example.com/verify/1", "badge_url": "https://example.com/badge.png", "cert_number": "N-1" },
+		{ "name": "No dates at all", "issuer": "Body B" },
+		{ "name": "Last valid day today", "date_issued": "2024-10-01", "date_expires": "2026-09-30" },
+		{ "name": "Expired yesterday", "date_issued": "2024-10-01", "date_expires": "2026-09-29" },
+		{ "name": "Issued today", "date_issued": "2026-09-30", "date_expires": "2027-09-30" },
+		{ "name": "Pending: issued tomorrow", "issuer": "Body C", "date_issued": "2026-10-01" },
+		{ "name": "Impossible issue date", "date_issued": "2026-02-30" },
+		{ "name": "Expiry equals issue", "date_issued": "2025-01-01", "date_expires": "2025-01-01" },
+		{ "name": "Expiry before issue", "date_issued": "2025-01-02", "date_expires": "2025-01-01" },
+		{ "name": "Loose date format", "date_issued": "2026-1-01" },
+		{ "name": "Trailing newline in date", "date_issued": "2026-01-01\n" },
+		{ "name": "", "date_issued": "2020-01-01" }
+	],
+	"person": {
+		"name": "Alex Morgan",
+		"job_title": "Chartered Physiotherapist",
+		"description": "Physiotherapist and founder.",
+		"url": "https://alex.example",
+		"image_url": "https://example.com/alex.jpg",
+		"linkedin_url": "https://www.linkedin.com/in/alex",
+		"same_as": ["https://www.linkedin.com/in/alex", "https://bsky.app/profile/alex.example"],
+		"knows_about": "Physiotherapy, Running injuries , , Sports rehabilitation"
+	}
+}

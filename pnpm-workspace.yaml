@@ -1,0 +1,21 @@
+# Standalone build settings for the public repository (the private
+# development workspace keeps these at its root).
+packages:
+  - "."
+
+strictDepBuilds: true
+dangerouslyAllowAllBuilds: false
+allowBuilds:
+  esbuild: true
+  workerd: true
+
+# Security overrides for transitive tooling and host dependencies (2026-10-14
+# audit: 19 advisories, none in the shipped plugin). Each lifts only the
+# vulnerable range to its patched release. Drop them once the packages that pull
+# these in (emdash, @emdash-cms/plugin-test, sandbox-workerd, vite) require
+# the patched versions themselves.
+overrides:
+  "undici@>=7.0.0 <7.29.1": "^7.29.1"
+  "sharp@<0.35.5": "^0.35.5"
+  "http-cache-semantics@<4.3.0": "^4.3.0"
+  "source-map-js@>=1.0.0 <1.2.2": "^1.2.2"

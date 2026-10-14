@@ -1,0 +1,59 @@
+{
+	"$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+
+	"slug": "schema-identity",
+	"name": "Schema Identity",
+	"description": "Structured data for EmDash: a connected schema.org graph for your site, the people behind your content and their credentials. By Monprez.",
+	"keywords": ["schema", "structured data", "json-ld", "credentials", "authors"],
+	"publisher": "did:plc:6tsd5s2x5lguc42vwtifgx4k",
+
+	"license": "MIT",
+	"author": { "name": "Monprez" },
+	"security": { "email": "plugins@monprez.se" },
+	"repo": "https://github.com/monprez/emdash-schema-identity",
+
+	// Registry listing images (PNG/JPEG/WebP, max 1 MiB each). Artwork sources
+	// live outside the published package; screenshots show demo data only.
+	"release": {
+		"requires": { "env:emdash": ">=1.2.0" },
+		"artifacts": {
+			"icon": { "file": "assets/icon.png" },
+			"banner": { "file": "assets/banner.png" },
+			"screenshots": [
+				{ "file": "assets/screenshot-1-credentials.png" },
+				{ "file": "assets/screenshot-2-identity.png" },
+				{ "file": "assets/screenshot-3-author-box.png" },
+				{ "file": "assets/screenshot-4-people.png" },
+				{ "file": "assets/screenshot-5-dashboard-widget.png" },
+				{ "file": "assets/screenshot-6-byline-roles.png" }
+			]
+		}
+	},
+
+	// Trust contract — what runtime APIs the plugin asks for.
+	// Empty arrays mean no extra privileges beyond logging,
+	// KV, and route/hook registration. Changing these between
+	// releases requires a version bump because installed
+	// users have consented to the old contract.
+	// bylines:read: who is credited on a page, for their Person nodes.
+	// No media access (its URLs need a login), no content writes, no network.
+	"capabilities": ["bylines:read"],
+	"allowedHosts": [],
+	"storage": {
+		// One record per byline translationGroup: job title, expertise, profiles.
+		"people": { "indexes": ["updatedAt"] },
+		// One record per credential; owner is "site-person", "organization" or "group:<translationGroup>".
+		// dateExpires: the expiry widget asks for a date range instead of scanning everything.
+		"credentials": { "indexes": ["owner", "createdAt", ["owner", "createdAt"], "dateExpires"] }
+	},
+
+	"admin": {
+		"pages": [
+			{ "path": "/identity", "label": "Identity", "icon": "identification-card" },
+			{ "path": "/credentials", "label": "Credentials", "icon": "award" },
+			{ "path": "/people", "label": "People", "icon": "users" },
+			{ "path": "/roles", "label": "Byline roles", "icon": "tag" }
+		],
+		"widgets": [{ "id": "expiring", "title": "Expiring credentials", "size": "half" }]
+	}
+}

@@ -1,0 +1,155 @@
+{
+    "source": "Monprez Schema Identity 1.1.0",
+    "credential": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Active, open-ended",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Body A"
+            },
+            "dateCreated": "2019-06-01",
+            "url": "https://example.com/verify/1",
+            "image": "https://example.com/badge.png"
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "No dates at all",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Body B"
+            }
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Last valid day today",
+            "dateCreated": "2024-10-01",
+            "expires": "2026-09-30"
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Issued today",
+            "dateCreated": "2026-09-30",
+            "expires": "2027-09-30"
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Pending: issued tomorrow",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Body C"
+            },
+            "dateCreated": "2026-10-01"
+        }
+    ],
+    "certification": [
+        {
+            "@type": "Certification",
+            "name": "Active, open-ended",
+            "issuedBy": {
+                "@type": "Organization",
+                "name": "Body A"
+            },
+            "certificationIdentification": "N-1",
+            "certificationStatus": "https://schema.org/CertificationActive",
+            "validFrom": "2019-06-01",
+            "url": "https://example.com/verify/1",
+            "image": "https://example.com/badge.png"
+        },
+        {
+            "@type": "Certification",
+            "name": "No dates at all",
+            "issuedBy": {
+                "@type": "Organization",
+                "name": "Body B"
+            },
+            "certificationStatus": "https://schema.org/CertificationActive"
+        },
+        {
+            "@type": "Certification",
+            "name": "Last valid day today",
+            "certificationStatus": "https://schema.org/CertificationActive",
+            "validFrom": "2024-10-01",
+            "expires": "2026-09-30"
+        },
+        {
+            "@type": "Certification",
+            "name": "Issued today",
+            "certificationStatus": "https://schema.org/CertificationActive",
+            "validFrom": "2026-09-30",
+            "expires": "2027-09-30"
+        },
+        {
+            "@type": "Certification",
+            "name": "Pending: issued tomorrow",
+            "issuedBy": {
+                "@type": "Organization",
+                "name": "Body C"
+            },
+            "validFrom": "2026-10-01"
+        }
+    ],
+    "person": {
+        "@type": "Person",
+        "@id": "https://example.com/#/schema/person",
+        "name": "Alex Morgan",
+        "url": "https://alex.example",
+        "jobTitle": "Chartered Physiotherapist",
+        "description": "Physiotherapist and founder.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://example.com/alex.jpg"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/alex",
+            "https://bsky.app/profile/alex.example"
+        ],
+        "knowsAbout": [
+            "Physiotherapy",
+            "Running injuries",
+            "Sports rehabilitation"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Active, open-ended",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Body A"
+                },
+                "dateCreated": "2019-06-01",
+                "url": "https://example.com/verify/1",
+                "image": "https://example.com/badge.png"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "No dates at all",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Body B"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Last valid day today",
+                "dateCreated": "2024-10-01",
+                "expires": "2026-09-30"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Issued today",
+                "dateCreated": "2026-09-30",
+                "expires": "2027-09-30"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Pending: issued tomorrow",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Body C"
+                },
+                "dateCreated": "2026-10-01"
+            }
+        ]
+    }
+}
