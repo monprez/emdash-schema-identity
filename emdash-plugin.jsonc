@@ -8,9 +8,18 @@
 	"publisher": "did:plc:6tsd5s2x5lguc42vwtifgx4k",
 
 	"license": "MIT",
-	"author": { "name": "Monprez" },
+	"author": { "name": "Monprez", "url": "https://monprez.se/en/home/" },
 	"security": { "email": "plugins@monprez.se" },
 	"repo": "https://github.com/monprez/emdash-schema-identity",
+
+	// Long-form text on the registry page (CommonMark, max 2,000 characters each).
+	// Profile fields: `emdash-plugin update-package` updates them without a release.
+	"sections": {
+		"description": { "file": "listing/description.md" },
+		"installation": { "file": "listing/installation.md" },
+		"changelog": { "file": "CHANGELOG.md" },
+		"security": { "file": "listing/security.md" }
+	},
 
 	// Registry listing images (PNG/JPEG/WebP, max 1 MiB each). Artwork sources
 	// live outside the published package; screenshots show demo data only.

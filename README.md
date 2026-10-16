@@ -77,7 +77,10 @@ could not load.
 
 Search engines expect structured data to describe what readers can see. If you
 publish credentials, show them on the page too. The plugin has a public,
-read-only route that returns exactly what the markup contains today for a person:
+read-only route that returns, for a person, the job title, expertise and current
+credentials the markup uses, by the same rules. It answers for every existing
+byline, including people not yet credited on a published page, so only enter
+what you are happy to make public:
 
 ```
 GET /_emdash/api/plugins/schema-identity/people?group=<byline translationGroup>
